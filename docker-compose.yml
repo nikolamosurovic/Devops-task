@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - '80:80'
+      - '9093:9093'
     networks:
       - app-network
       - cadvisor-network
