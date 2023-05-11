@@ -6,11 +6,11 @@ from fastapi_prometheus import metrics, PrometheusMiddleware
 app = FastAPI()
 app.add_middleware(PrometheusMiddleware)
 
-@app.get("/")
+@app.get("/app")
 def read_root():
     return {"message": "Hello from Things Solver!"}
 
-@app.get("/metrics")
+@app.get("/app/metrics")
 def read_metrics():
     return metrics()
 
