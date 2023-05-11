@@ -1,9 +1,14 @@
+# Use an official Python runtime as the base image
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.8
 
-COPY requirements.txt .
+# Set the working directory to /app
+WORKDIR /app
 
-RUN pip install -r requirements.txt
+# Install Unicorn and FastAPI
+RUN pip install uvicorn fastapi
 
-COPY main.py /app
+# Copy the Lambda function code into the container
+COPY main.py .
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
+# Set the CMD to your Lambda handler (modify as needed)
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0"]
