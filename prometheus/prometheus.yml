@@ -3,4 +3,5 @@ global:
 scrape_configs:
   - job_name: "fastapi-app"
     static_configs:
-      - targets: ["app:80/metric"]
+      - targets: ["app:80"]
+      - metrics: ["app:80/metrics"]
