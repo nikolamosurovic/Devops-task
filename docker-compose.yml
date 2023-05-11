@@ -6,6 +6,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - 8000:80
+    networks:
+      - app-network
 #  prometheus:
 #    image: prom/prometheus
 #    ports:
@@ -16,9 +18,6 @@ services:
 #    image: grafana/grafana
 #    ports:
 #      - 3000:3000
-    networks:
-      - app-network
-
     cadvisor:
       image: google/cadvisor:latest
       ports:
