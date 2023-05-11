@@ -4,11 +4,7 @@ from fastapi import FastAPI
 app = FastAPI()
 
 @app.get("/")
-def read_root():
-    return {"message": "Hello from FastAPI"}
-
-@app.get("/lambda")
-def lambda_handler():
+def lambda_handler(event, context):
     return {
         'statusCode': 200,
         'body': json.dumps('Hello from Things Solver!')
