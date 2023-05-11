@@ -16,6 +16,10 @@ def lambda_handler():
         'body': json.dumps('Hello from Things Solver!')
     }
 
+@app.get("/metrics")
+def get_metrics():
+    return {"message": "Metrics endpoint"}
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
