@@ -9,7 +9,7 @@ services:
       - '8000:80'
     networks:
       - app-network
-      - cadvisor
+      - cadvisor-network
 
   cadvisor:
     image: google/cadvisor:latest
@@ -21,9 +21,27 @@ services:
       - '/sys:/sys:ro'
       - '/var/lib/docker:/var/lib/docker:ro'
     networks:
+      - cadvisor-network
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - '9090:9090'
+    volumes:
+      - ./prometheus:/etc/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    networks:
       - app-network
-      - cadvisor
+      - cadvisor-network
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - '3000:3000'
+    networks:
+      - app-network
 
 networks:
   app-network:
-  cadvisor:
+  cadvisor-network:
