@@ -1,23 +1,17 @@
 import json
 from fastapi import FastAPI
-from fastapi_lambda import FastAPILambdaHandler
-from prometheus_fastapi_instrumentator import Instrumentator, metrics
-from prometheus_fastapi_instrumentator.middleware import PrometheusMiddleware
+from prometheus_client import Counter, generate_latest, CONTENT_TYPE_LATEST
 
 app = FastAPI()
 
-instrumentator = Instrumentator()
-instrumentator.instrument(app).expose(app)
-
-app.add_middleware(PrometheusMiddleware)
+counter = Counter("app_requests_total", "Total number of requests")
 
 @app.get("/")
 def read_root():
+    counter.inc()
     return {"message": "Hello from Things Solver!"}
 
 @app.get("/metrics")
 def read_metrics():
-    return metrics()
-
-handler = FastAPILambdaHandler(app)
-lambda_handler = handler.lambda_handler()
+    headers = {"Content-Type": CONTENT_TYPE_LATEST}
+    return generate_latest(), headers
