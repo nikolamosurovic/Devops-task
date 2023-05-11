@@ -1,7 +1,7 @@
 import json
 from fastapi import FastAPI
 from fastapi_lambda import FastAPILambdaHandler
-from fastapi_prometheus import metrics, PrometheusMiddleware
+from prometheus_fastapi_instrumentator import Instrumentator
 
 app = FastAPI()
 app.add_middleware(PrometheusMiddleware)
