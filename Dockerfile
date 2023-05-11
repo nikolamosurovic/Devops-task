@@ -11,4 +11,4 @@ RUN pip install uvicorn fastapi
 COPY main.py .
 
 # Set the CMD to your Lambda handler (modify as needed)
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
