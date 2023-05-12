@@ -5,11 +5,10 @@ FROM tiangolo/uvicorn-gunicorn-fastapi:python3.8
 WORKDIR /app
 
 # Install Unicorn and FastAPI
-RUN pip install uvicorn fastapi
+RUN pip install uvicorn fastapi prometheus-client psutil
 
 # Copy the Lambda function code into the container
-COPY main.py .
+COPY handler.py .
 
 # Set the CMD to your Lambda handler (modify as needed)
-#CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
-CMD ["uvicorn", "main:app", "--reload"]
+CMD ["uvicorn", "handler:app", "--host", "0.0.0.0"]
