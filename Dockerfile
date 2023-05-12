@@ -10,5 +10,5 @@ RUN pip install uvicorn fastapi prometheus-client psutil
 # Copy the Lambda function code into the container
 COPY handler.py .
 
-# Set the CMD to your Lambda handler (modify as needed)
+# Set the CMD to your Lambda handler
 CMD ["uvicorn", "handler:app", "--host", "0.0.0.0"]
