@@ -1,12 +1,12 @@
 version: '3'
 
 services:
-  app:
+  your_app:
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - 8000:80
+      - 8000:8000  # Replace with the appropriate port for your application
     labels:
       - "prometheus.io/scrape=true"
       - "prometheus.io/path=/metrics"
@@ -29,6 +29,8 @@ services:
       - --config.file=/etc/prometheus/prometheus.yml
       - --storage.tsdb.path=/prometheus
       - --web.enable-lifecycle
+    depends_on:
+      - your_app
 
   cadvisor:
     image: google/cadvisor:latest
