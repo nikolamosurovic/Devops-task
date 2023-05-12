@@ -15,6 +15,7 @@ Before starting the task, ensure that you have the following software installed 
 ## Step 1: Transfer Lambda Function to FastAPI Docker Services
 
 1.1. Open your code editor and create a new file named handler.py.
+
 1.2. Write the necessary code for the Lambda function in the handler.py file. This code will be transferred to the FastAPI application.
 1.3. Next, create a new file named Dockerfile in the same directory as handler.py.
 1.4. Open the Dockerfile and define the instructions to build the Docker image for your FastAPI application.
