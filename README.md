@@ -1,5 +1,3 @@
-# Devops-task
-
 # Documentation:
 
 Transferring a Lambda Function to FastAPI Docker Service with Prometheus and Grafana Monitoring
