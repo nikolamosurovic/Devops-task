@@ -70,4 +70,6 @@ Before starting the task, ensure that you have the following software installed 
 
 5.4. Access the FastAPI application at http://localhost:8000 to verify that it is running correctly.
 
-5.5. Access the Grafana dashboard at http://localhost:3000 and navigate to the created dashboard to view the metrics.
+5.5. Access Prometheus at http://localhost:9090 to verify that it is running correctly. On the Status-Targets page, you should see the CAAdvisor metrics up.
+
+5.6. Access the Grafana dashboard at http://localhost:3000 and navigate to the created dashboard to view the metrics.
