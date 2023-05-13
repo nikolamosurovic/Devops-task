@@ -10,8 +10,11 @@ Transferring a Lambda Function to FastAPI Docker Service with Prometheus and Gra
 Before starting the task, ensure that you have the following software installed on your system:
 
    Docker: Used for containerization and building Docker images.
+   
    Docker Compose: Used for defining and running multi-container Docker applications.
+   
    A code editor: You can use any code editor of your choice. Example IntelliJ like me.
+   
 ## Step 1: Transfer Lambda Function to FastAPI Docker Services
 
 1.1. Open your code editor and create a new file named handler.py.
