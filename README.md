@@ -61,7 +61,7 @@ Before starting the task, ensure that you have the following software installed 
 - Configure the graph with the following settings:
 - Metrics: Select the appropriate metric for total memory consumption. In this case, use this metric: cointainer_memory_usage_bytes
 - Select labels: cadvisorRevision
-- For network traffic, repeat this stpes, just replace cointainer_memory_usage_bytes with cointainter_network_transmit_bytes_total
+- For network traffic, repeat this steps, just replace cointainer_memory_usage_bytes with cointainter_network_transmit_bytes_total
 
 ## Step 5: Run Docker Compose to Bring Everything Up
 
