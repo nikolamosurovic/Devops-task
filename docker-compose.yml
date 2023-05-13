@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - 8000:8000  # Replace with the appropriate port for your application
+      - 8000:8000
     labels:
       - "prometheus.io/scrape=true"
       - "prometheus.io/path=/metrics"
