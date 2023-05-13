@@ -5,7 +5,7 @@ FROM tiangolo/uvicorn-gunicorn-fastapi:python3.8
 WORKDIR /app
 
 # Install Unicorn and FastAPI
-RUN pip install uvicorn fastapi prometheus-client psutil
+RUN pip install uvicorn fastapi
 
 # Copy the Lambda function code into the container
 COPY handler.py .
